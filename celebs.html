@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worked With Celebrities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#080607;
+    --gold:#d6af69;
+    --gold-bright:#f0d79f;
+    --pink:#f2c6d5;
+    --pink-soft:#f7dde6;
+    --text:#fff7f3;
+    --muted:#d8c6cd;
+    --line:rgba(255,255,255,0.1);
+    --shadow:0 24px 70px rgba(0,0,0,0.45);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Manrope', sans-serif;
+    color:var(--text);
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 16% 14%, rgba(242,198,213,0.15), transparent 22%),
+        radial-gradient(circle at 84% 10%, rgba(214,175,105,0.15), transparent 22%),
+        linear-gradient(145deg, #040304 0%, #0d090b 45%, #140c10 100%);
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.page{
+    width:min(1180px, calc(100% - 32px));
+    margin:0 auto;
+    padding:28px 0 56px;
+}
+
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:28px;
+}
+
+.back{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 18px;
+    border-radius:999px;
+    border:1px solid rgba(240,215,159,0.25);
+    background:linear-gradient(135deg, rgba(242,198,213,0.12), rgba(214,175,105,0.12));
+    color:var(--text);
+    font-weight:600;
+    box-shadow:0 14px 30px rgba(0,0,0,0.24);
+}
+
+.top-note{
+    color:var(--pink-soft);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:12px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap:24px;
+    align-items:stretch;
+    margin-bottom:38px;
+}
+
+.hero-copy,
+.hero-panel,
+.gallery-card{
+    border:1px solid var(--line);
+    background:linear-gradient(160deg, rgba(22,16,19,0.92), rgba(12,9,11,0.98));
+    box-shadow:var(--shadow);
+}
+
+.hero-copy{
+    border-radius:34px;
+    padding:40px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-copy::before{
+    content:"";
+    position:absolute;
+    inset:auto -40px -60px auto;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(242,198,213,0.22), transparent 70%);
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 14px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.04);
+    color:var(--pink-soft);
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+h1,
+h2{
+    font-family:'Cormorant Garamond', serif;
+    line-height:0.98;
+}
+
+h1{
+    font-size:clamp(2.8rem, 4vw, 4.7rem);
+    margin-bottom:18px;
+}
+
+.hero-copy p{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:1rem;
+    max-width:640px;
+}
+
+.hero-meta{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:14px;
+    margin-top:26px;
+}
+
+.meta-card{
+    padding:18px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.meta-card strong{
+    display:block;
+    color:var(--gold-bright);
+    margin-bottom:8px;
+    font-size:0.96rem;
+}
+
+.meta-card span{
+    color:var(--muted);
+    font-size:0.92rem;
+    line-height:1.7;
+}
+
+.hero-panel{
+    border-radius:34px;
+    padding:22px;
+}
+
+.collage{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:16px;
+    min-height:100%;
+}
+
+.collage-main,
+.collage-stack article{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    min-height:250px;
+}
+
+.collage-main img,
+.collage-stack img,
+.gallery-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.45s ease;
+}
+
+.collage-main:hover img,
+.collage-stack article:hover img,
+.gallery-card:hover img{
+    transform:scale(1.05);
+}
+
+.collage-stack{
+    display:grid;
+    gap:16px;
+}
+
+.collage-single{
+    grid-template-columns:1fr;
+}
+
+.collage-main.portrait-full{
+    min-height:560px;
+    display:grid;
+    place-items:center;
+    background:rgba(255,255,255,0.02);
+}
+
+.collage-main.portrait-full img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+}
+
+.gallery-card{
+    border-radius:28px;
+    overflow:hidden;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(240,215,159,0.24);
+    box-shadow:0 28px 72px rgba(0,0,0,0.5);
+}
+
+.gallery-card img{
+    height:320px;
+}
+
+.gallery-copy{
+    padding:20px 20px 22px;
+}
+
+.gallery-copy strong{
+    display:block;
+    font-size:1.05rem;
+    margin-bottom:8px;
+    color:var(--gold-bright);
+}
+
+.gallery-copy span{
+    color:var(--muted);
+    line-height:1.75;
+    font-size:0.94rem;
+}
+
+.future-card{
+    display:grid;
+    place-items:center;
+    min-height:100%;
+    padding:28px;
+    text-align:center;
+    background:
+        linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        repeating-linear-gradient(135deg, rgba(242,198,213,0.07) 0 12px, rgba(214,175,105,0.04) 12px 24px);
+}
+
+.future-card strong{
+    display:block;
+    margin-bottom:10px;
+    font-size:1.1rem;
+    color:var(--gold-bright);
+}
+
+.future-card span{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+@media (max-width: 980px){
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero-meta{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width: 720px){
+    .page{
+        width:min(100% - 20px, 1180px);
+        padding-top:20px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-copy,
+    .hero-panel{
+        border-radius:26px;
+        padding:24px;
+    }
+
+    .collage{
+        grid-template-columns:1fr;
+    }
+
+    .collage-main.portrait-full{
+        min-height:420px;
+    }
+
+    .hero-meta{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-card img{
+        height:280px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="page">
+    <div class="topbar">
+        <a href="webpage.html" class="back">Back to Home</a>
+        <div class="top-note">Black, gold, and soft pink celebrity gallery</div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Worked With</div>
+            <h1>Featured with Gayu Sri inside the celebrity gallery.</h1>
+            <p>Indra Rajkumar Makeup Artist has been recognized and associated with popular television personality Gayu Sri (Vijay TV, Zee Tamil).</p>
+
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <strong>Television Presence</strong>
+                    <span>Recognized beauty work connected with a familiar face across Vijay TV and Zee Tamil.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Editorial Finish</strong>
+                    <span>Premium styling presented with a polished, camera-ready visual direction.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Future Space</strong>
+                    <span>This gallery is ready to grow with more celebrity and notable collaborations.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <div class="collage">
+                <article class="collage-main">
+                    <img src="WhatsApp Image 2026-04-17 at 10.00.09 PM.jpeg" alt="Gayu Sri featured collaboration portrait">
+                </article>
+                <div class="collage-stack">
+                    <article>
+                        <img src="WhatsApp Image 2026-04-17 at 10.00.08 PM (1).jpeg" alt="Gayu Sri in red saree collaboration look">
+                    </article>
+                    <article>
+                        <img src="WhatsApp Image 2026-04-17 at 10.00.08 PM (2).jpeg" alt="Featured beauty styling portrait with Gayu Sri">
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Worked With</div>
+            <h1>Featured with Magalakshmi Sudarsanan.</h1>
+            <p>Indra Rajkumar Makeup Artist has been recognized and associated with actress Magalakshmi Sudarsanan, a Chennai-based artist known for her work in the entertainment industry, reflecting a growing presence in the professional makeup field.</p>
+
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <strong>Entertainment Presence</strong>
+                    <span>Associated with an actress recognized within the entertainment space and public-facing visual work.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Chennai-Based Artist</strong>
+                    <span>The feature highlights a Chennai-based personality and extends the gallery's notable professional associations.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Professional Growth</strong>
+                    <span>This collaboration reflects Indra Rajkumar's growing presence in elevated and recognized makeup work.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <div class="collage collage-single">
+                <article class="collage-main portrait-full">
+                    <img src="WhatsApp Image 2026-04-18 at 12.00.00 AM.jpeg" alt="Magalakshmi Sudarsanan featured portrait">
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Worked With</div>
+            <h1>Featured with Soundarya Gowda in the same gallery.</h1>
+            <p>Indra Rajkumar Makeup Artist has been recognized and associated with actress Soundarya Gowda, known for her presence in the South Indian entertainment industry, reflecting a growing presence in the professional makeup field.</p>
+
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <strong>South Indian Presence</strong>
+                    <span>Associated with an actress recognized for her presence in the South Indian entertainment industry.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Professional Beauty Work</strong>
+                    <span>The feature reinforces polished makeup work designed for recognized public-facing portraits and appearances.</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Growing Recognition</strong>
+                    <span>This collaboration reflects Indra Rajkumar's expanding presence in premium and professional makeup artistry.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-panel">
+            <div class="collage collage-single">
+                <article class="collage-main portrait-full">
+                    <img src="WhatsApp Image 2026-04-18 at 12.08.41 AM.jpeg" alt="Soundarya Gowda featured portrait">
+                </article>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
