@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Indra Rajkumar Makeup Artist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+.top-text{
+    color:gold;
+    font-family:'Playfair Display', serif;
+    font-size:20px;
+}
+
+.hero{
+    height:100vh;
+    background:url('https://res.cloudinary.com/dfnt8ozqz/image/upload/f_auto,q_auto/1000099452_ng7uvw') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    font-family:'Playfair Display', serif;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.gold{
+    background:gold;
+    color:#000;
+}
+
+.outline{
+    border:2px solid gold;
+    background:transparent;
+    color:#fff;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+section{
+    padding:70px 40px;
+    text-align:center;
+}
+
+.services{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.highlights,
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+}
+
+.highlight-card,
+.service-card{
+    background:#1a1a1a;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.highlight-card:hover,
+.service-card:hover{
+    background:#222;
+    transform:translateY(-10px);
+}
+
+.highlight-card img,
+.service-card img,
+.gallery img{
+    width:100%;
+    display:block;
+    transition:0.3s;
+}
+
+.highlight-card img,
+.service-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.highlight-card span,
+.service-card span{
+    display:block;
+    padding:14px;
+    font-weight:600;
+}
+
+.review-highlight{
+    background:#1a1a1a;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.review-highlight:hover{
+    background:#222;
+    transform:translateY(-10px);
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:6px;
+    padding:10px;
+}
+
+.review-grid img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+}
+
+.review-title{
+    display:block;
+    padding:8px 14px 16px;
+    font-weight:600;
+}
+
+.review-highlight{
+    display:block;
+}
+
+.gallery img{
+    border-radius:12px;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    padding:20px;
+    background:#000;
+    text-align:center;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+@media (max-width: 768px){
+    nav{
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+section{
+    padding:50px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <img src="logo.png.jpeg" alt="Indra Rajkumar" style="width:25%; max-width:90px; border-radius:7px;">
+    <div class="top-text">Richlook Artistry</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#location">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div>
+        <h1>Indra Rajkumar Makeup Artist</h1>
+        <p>Bringing Beauty to Your Special Moments</p>
+        <a href="tel:9787111287" class="btn gold">Book Now</a>
+        <a href="https://www.instagram.com/indrarajkumarmakeupartist" target="_blank" class="btn outline insta">Instagram</a>
+    </div>
+</div>
+
+<section id="about" class="fade" style="display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:280px; text-align:center;">
+        <img src="indra.jpg.jpeg" alt="Indra Rajkumar" style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+    </div>
+
+    <div style="flex:1; min-width:300px;">
+        <h2>About</h2>
+        <p>
+            Indra Rajkumar is a renowned bridal and celebrity makeup artist with over
+            <strong>10+ years of experience</strong> in enhancing natural beauty. Based in Tamil Nadu,
+            she is known for creating elegant, flawless looks for weddings, receptions, parties,
+            and special occasions.
+            <br><br>
+            With a keen eye for detail and a passion for perfection, Indra ensures every client
+            feels confident, radiant, and truly camera-ready. Her signature style beautifully blends
+            <strong>traditional charm</strong> with <strong>modern elegance</strong>, giving each bride
+            a unique, luxurious finish.
+            <br><br>
+            She is also a proud member of
+            <span style="color:red; font-weight:bold;">BNI (Business Network International)</span>,
+            showcasing her strong professional network and commitment to delivering high-quality service.
+        </p>
+    </div>
+</section>
+
+<section class="fade">
+    <h2>Our Highlights</h2>
+    <div class="highlights">
+        <a href="reviews.html" class="review-highlight">
+            <div class="review-grid">
+                <img src="review.jpg.jpeg" alt="Bride review 1">
+                <img src="first.jpg.png" alt="Bride review 2">
+                <img src="indra.jpg.jpeg" alt="Bride review 3">
+                <img src="cele.jpg.jpeg" alt="Bride review 4">
+                <img src="duke.j.png" alt="Bride review 5">
+            </div>
+            <span class="review-title">Bride Reviews</span>
+        </a>
+
+        <a href="celebs.html" class="highlight-card">
+            <img src="cele.jpg.jpeg" alt="Worked with Celebrities">
+            <span>Worked with Celebrities</span>
+        </a>
+
+        <a href="ad-shoot.html" class="highlight-card">
+            <img src="studio.jpg.jpeg" alt="Ad Shoot">
+            <span>Ad Shoot</span>
+        </a>
+    </div>
+</section>
+
+<section id="services" class="fade">
+    <h2>Services</h2>
+    <div class="services">
+        <a href="hd-makeup.html" class="service-card">
+            <img src="hd.jpg.jpeg" alt="HD Makeup">
+            <span>HD Makeup</span>
+        </a>
+        
+        <a href="airbrush.html" class="service-card">
+            <img src="hd.jpg.jpeg" alt="Airbrush Makeup">
+            <span>Airbrush</span>
+        </a>
+
+        <a href="hair.html" class="service-card">
+            <img src="studio.jpg.jpeg" alt="Hairstylist">
+            <span>Hairstylist</span>
+        </a>
+
+        <a href="saree.html" class="service-card">
+            <img src="cele.jpg.jpeg" alt="Saree Drapist">
+            <span>Saree Drapist</span>
+        </a>
+    </div>
+</section>
+
+<section id="portfolio" class="fade">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Makeup portfolio 1">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f" alt="Makeup portfolio 2">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Makeup portfolio 3">
+        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="Makeup portfolio 4">
+    </div>
+</section>
+
+<section class="fade">
+    <h2>Book Now</h2>
+    <p>Call or WhatsApp to book your appointment</p>
+    <a href="tel:9787111287" class="btn gold">Call Now</a>
+    <a href="https://wa.me/919787111287" class="btn outline">WhatsApp</a>
+</section>
+
+<div class="social">
+    <a href="https://www.facebook.com/share/18dQiCQZaf/" target="_blank" class="btn gold">Facebook</a>
+    <a href="https://www.instagram.com/indrarajkumarmakeupartist" target="_blank" class="btn outline">Instagram</a>
+    <a href="https://youtube.com/@indrarajkumar2684?si=g7yerhXU3XFVZV3P" target="_blank" class="btn gold">YouTube</a>
+</div>
+
+<br><br>
+
+<footer>
+    <p>&copy; 2026 Indra Rajkumar Makeup Artist</p>
+</footer>
+
+<section id="location" class="fade">
+    <h2>Our Location</h2>
+    <p>
+        No.17/1, 17/1, Srinivasa Ragavan St,<br>
+        near Gandhi Park, R.S. Puram,<br>
+        Coimbatore, Tamil Nadu 641001
+    </p>
+
+    <br>
+
+    <iframe
+        src="https://www.google.com/maps?q=Gandhi+Park+RS+Puram+Coimbatore&output=embed"
+        width="100%"
+        height="300"
+        style="border:0; border-radius:12px;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+function showOnScroll() {
+    elements.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
+</script>
+</body>
+</html>
